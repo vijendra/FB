@@ -1,0 +1,21 @@
+<% title "Forms" %>
+
+<table class ='listing'>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th> Actions</th>
+  </tr>
+  <% for form in @forms %>
+    <tr>
+      <td><%=h form.name %></td>
+      <td><%=h form.description %></td>
+      <td><%= link_to "Show", hospital_form_path(@hospital, form) %> | 
+          <%= link_to "Edit", edit_hospital_form_path(@hospital, form) %> | 
+          <%= link_to "Destroy", hospital_form_path(@hospital, form), :confirm => 'Are you sure?', :method => :delete %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Form", new_hospital_form_path %></p>

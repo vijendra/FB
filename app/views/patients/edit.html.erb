@@ -1,0 +1,10 @@
+<div class='sample_form'>
+  <% form_for [@hospital, @patient] do |f| -%>
+      <% f.fields_for :field_values do |ff| %>
+        <%= generate_label_and_form_tag(ff) %>
+      <% end %>
+	<br /><hr />
+	<%= submit_tag "Submit"  %>
+  <% end %>
+
+</div>

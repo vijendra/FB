@@ -1,0 +1,39 @@
+<% title "Form: #{h @form.name}"  -%>
+<div class ='general'>
+<p>
+  <%=h @form.description -%>
+</p>
+
+<h3>Fields</h3>
+<ul id="form_fields">
+  <% @form.form_fields.each do |form_field| -%>
+    <% content_tag_for :li, form_field do %>
+      <%= form_field.label %>
+    <% end %>
+  <% end %>
+</ul>
+</div>
+
+<div class='sample_form'>
+  <h3> This is how your form looks like to the end user </h3>
+ 
+  <% form_for @preview do |f| -%>
+    <% @preview.field_values.each do |field| -%>
+      <% f.fields_for field do |ff| %>
+        <%= generate_label_and_form_tag(ff) %>
+      <% end %>
+    <% end %>
+	<br /><hr />
+	<%= submit_tag "Submit this form", :disabled => :true %>
+  <% end %>
+
+</div>
+
+<div class ='clear'> </div>
+
+<p>
+ <%= link_to "Edit", edit_hospital_form_path(@hospital, @form) %> |
+ <%= link_to "Destroy", hospital_form_path(@hospital, @form), :confirm => 'Are you sure?', :method => :delete %> |
+ <%= link_to "View All", hospital_forms_path(@hospital) %>
+</p>
+

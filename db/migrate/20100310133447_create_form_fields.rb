@@ -1,7 +1,7 @@
 class CreateFormFields < ActiveRecord::Migration
   def self.up
     create_table :form_fields do |t|
-      t.integer :registration_form_id
+      t.integer :form_id
       t.string :label
       t.string :tag
       t.text :values

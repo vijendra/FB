@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100312064058) do
+ActiveRecord::Schema.define(:version => 20100313114551) do
 
   create_table "field_values", :force => true do |t|
     t.integer  "form_field_id"
@@ -19,19 +19,32 @@ ActiveRecord::Schema.define(:version => 20100312064058) do
   end
 
   create_table "form_fields", :force => true do |t|
-    t.integer  "registration_form_id"
+    t.integer  "form_id"
     t.string   "label"
     t.string   "tag"
     t.text     "values"
-    t.boolean  "required",             :default => false
+    t.boolean  "required",   :default => false
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "registration_forms", :force => true do |t|
+  create_table "forms", :force => true do |t|
+    t.integer  "user_id"
     t.string   "name"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "hospital_id"
+  end
+
+  create_table "hospitals", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "patients", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
