@@ -1,6 +1,7 @@
 class CreateRegistrationForms < ActiveRecord::Migration
   def self.up
     create_table :registration_forms do |t|
+      t.integer :user_id
       t.string :name
       t.text :description
       t.timestamps
