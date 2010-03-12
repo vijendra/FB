@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :registration_forms
-
+  map.root :controller => :registration_forms
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

@@ -10065,3 +10065,116 @@ Rendering registration_forms/show
   [4;36;1mFormField Load (0.5ms)[0m   [0;1mSELECT * FROM `form_fields` WHERE (`form_fields`.registration_form_id = 5) ORDER BY position[0m
   [4;35;1mFormField Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `form_fields`[0m
 Completed in 97ms (View: 77, DB: 4) | 200 OK [http://localhost/registration_forms/5]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RegistrationFormsController#show (for 127.0.0.1 at 2010-03-12 11:39:55) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mRegistrationForm Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `registration_forms`[0m
+  [4;35;1mRegistrationForm Load (0.2ms)[0m   [0mSELECT * FROM `registration_forms` WHERE (`registration_forms`.`id` = 5) [0m
+Rendering template within layouts/application
+Rendering registration_forms/show
+  [4;36;1mFormField Load (0.2ms)[0m   [0;1mSELECT * FROM `form_fields` WHERE (`form_fields`.registration_form_id = 5) ORDER BY position[0m
+  [4;35;1mFormField Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `form_fields`[0m
+Completed in 382ms (View: 349, DB: 4) | 200 OK [http://localhost/registration_forms/5]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-12 11:41:05) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-12 11:41:06) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RegistrationFormsController#index (for 127.0.0.1 at 2010-03-12 11:41:45) [GET]
+  [4;36;1mRegistrationForm Load (0.2ms)[0m   [0;1mSELECT * FROM `registration_forms` [0m
+Rendering template within layouts/application
+Rendering registration_forms/index
+  [4;35;1mRegistrationForm Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `registration_forms`[0m
+Completed in 132ms (View: 102, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RegistrationFormsController#index (for 127.0.0.1 at 2010-03-12 11:43:14) [GET]
+  [4;36;1mRegistrationForm Load (3.9ms)[0m   [0;1mSELECT * FROM `registration_forms` [0m
+Rendering template within layouts/application
+Rendering registration_forms/index
+  [4;35;1mRegistrationForm Columns (5.4ms)[0m   [0mSHOW FIELDS FROM `registration_forms`[0m
+Completed in 75ms (View: 28, DB: 10) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RegistrationFormsController#index (for 127.0.0.1 at 2010-03-12 11:43:47) [GET]
+  [4;36;1mRegistrationForm Load (0.2ms)[0m   [0;1mSELECT * FROM `registration_forms` [0m
+Rendering template within layouts/application
+Rendering registration_forms/index
+  [4;35;1mRegistrationForm Columns (9.6ms)[0m   [0mSHOW FIELDS FROM `registration_forms`[0m
+Completed in 63ms (View: 22, DB: 10) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RegistrationFormsController#index (for 127.0.0.1 at 2010-03-12 11:44:05) [GET]
+  [4;36;1mRegistrationForm Load (0.2ms)[0m   [0;1mSELECT * FROM `registration_forms` [0m
+Rendering template within layouts/application
+Rendering registration_forms/index
+  [4;35;1mRegistrationForm Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `registration_forms`[0m
+Completed in 44ms (View: 17, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RegistrationFormsController#index (for 127.0.0.1 at 2010-03-12 11:44:47) [GET]
+  [4;36;1mRegistrationForm Load (0.2ms)[0m   [0;1mSELECT * FROM `registration_forms` [0m
+Rendering template within layouts/application
+Rendering registration_forms/index
+  [4;35;1mRegistrationForm Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `registration_forms`[0m
+Completed in 34ms (View: 15, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (5.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RegistrationFormsController#index (for 127.0.0.1 at 2010-03-12 11:45:09) [GET]
+  [4;36;1mRegistrationForm Load (0.2ms)[0m   [0;1mSELECT * FROM `registration_forms` [0m
+Rendering template within layouts/application
+Rendering registration_forms/index
+  [4;35;1mRegistrationForm Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `registration_forms`[0m
+Completed in 35ms (View: 18, DB: 7) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RegistrationFormsController#index (for 127.0.0.1 at 2010-03-12 11:45:45) [GET]
+  [4;36;1mRegistrationForm Load (0.2ms)[0m   [0;1mSELECT * FROM `registration_forms` [0m
+Rendering template within layouts/application
+Rendering registration_forms/index
+  [4;35;1mRegistrationForm Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `registration_forms`[0m
+Completed in 84ms (View: 61, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RegistrationFormsController#index (for 127.0.0.1 at 2010-03-12 11:45:59) [GET]
+  [4;36;1mRegistrationForm Load (14.1ms)[0m   [0;1mSELECT * FROM `registration_forms` [0m
+Rendering template within layouts/application
+Rendering registration_forms/index
+  [4;35;1mRegistrationForm Columns (5.6ms)[0m   [0mSHOW FIELDS FROM `registration_forms`[0m
+Completed in 59ms (View: 15, DB: 20) | 200 OK [http://localhost/]
