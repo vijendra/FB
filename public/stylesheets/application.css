@@ -191,4 +191,8 @@ p{ margin-top: 15px; padding: 0px;}
                
 }
 
-
+#user_nav { 
+  float: right;
+  margin-right :10%;
+  font-size: 12px;
+}
