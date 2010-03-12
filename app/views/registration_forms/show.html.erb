@@ -1,0 +1,30 @@
+<% title "Registration form: #{h @registration_form.name}"  %>
+<div class ='general'>
+<p>
+  <%=h @registration_form.description %>
+</p>
+
+<h3>Fields</h3>
+<ul id="form_fields">
+  <% @registration_form.form_fields.each do |form_field| %>
+    <% content_tag_for :li, form_field do %>
+      <%= form_field.label %>
+    <% end %>
+  <% end %>
+</ul>
+</div>
+
+<div class='sample_form'>
+  <h3> This is how your form looks like to the end user </h3>
+  <% form_tag('/') do |f| %>
+    <% @registration_form.form_fields.each do |form_field| %>
+      <%= generate_label_and_form_tag(form_field) %>
+    <% end %>
+  <% end %>
+</div>
+  <p>
+    <%= link_to "Edit", edit_registration_form_path(@registration_form) %> |
+    <%= link_to "Destroy", @registration_form, :confirm => 'Are you sure?', :method => :delete %> |
+    <%= link_to "View All", registration_forms_path %>
+  </p>
+

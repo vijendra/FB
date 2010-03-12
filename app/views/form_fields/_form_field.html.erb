@@ -1,0 +1,25 @@
+<div class = 'new_field' onMouseOver="this.style.backgroundColor='#e8f4ff';" onMouseOut="this.style.backgroundColor='#f2f2f2';">
+  <div class ='left part1'>
+    <strong><%= f.label :tag, "Select field type" %></strong> :
+    <%= f.select :tag, [["Text box","text_field"], ["Select Menu", "select"], ["Text Area", "text_area"], ["Check Box", "check_box"], ["Date Select", "date_select"]] %>
+ 
+  <p>
+    <strong><%= f.label :label, "Enter a label for this field" %></strong><br />
+    <%= f.text_field :label %>
+  </p>
+  
+  <p>
+    <%= f.check_box :required %>
+    <%= f.label :required, "Mark this field as required" %>
+  </p>
+  <p>
+    <strong><%= f.label :values, "Enter the possible values if this is a select menu (one per line)." %></strong><br />
+    <%= f.text_area :values, :cols => 35, :rows =>4%>
+  </p>
+ </div>
+ <div class = 'right right_button'>
+    <%= button_to_function('Remove this field', "remove_fields(this);") %>
+ </div>
+ <div class = 'clear'> </div>
+ <%= f.hidden_field :_destroy, :value => 0 %>
+</div>
