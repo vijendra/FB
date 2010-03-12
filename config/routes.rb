@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :registration_forms
-  
+  map.resources :form_previews
   map.resources :user_sessions
 
   map.resources :users

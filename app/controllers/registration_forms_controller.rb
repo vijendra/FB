@@ -5,6 +5,12 @@ class RegistrationFormsController < ApplicationController
   
   def show
     @registration_form = RegistrationForm.find(params[:id])
+    @preview = FormPreview.new
+
+    #Dynamically setting FormPreview columns. Its a table less model
+    @registration_form.form_fields.all.each do |field| 
+      FormPreview.column ":#{field.label.underscore}", :text 
+    end
   end
   
   def new
