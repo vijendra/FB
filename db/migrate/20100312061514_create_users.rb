@@ -32,7 +32,7 @@ class CreateUsers < ActiveRecord::Migration
   
     
     # Create admin role 
-    admin = Role.create(:name => 'Admin1')
+    admin = Role.create(:name => 'Admin')
     user1 = User.create do |u|
       u.username = 'admin1'
       u.password = u.password_confirmation = 'admin1'
