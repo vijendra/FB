@@ -1,7 +1,8 @@
 class FormsController < ApplicationController
+  require_role "Admin"
   def index
     @hospital = Hospital.find(params[:hospital_id])
-    @forms = Form.all
+    @forms = @hospital.forms
   end
   
   def show
@@ -27,7 +28,7 @@ class FormsController < ApplicationController
     @form = @hospital.forms.new(params[:form])
     if @form.save
       flash[:notice] = "Successfully created form."
-      redirect_to @form
+      redirect_to [@hospital, @form]
     else
       render :action => 'new'
     end
@@ -49,9 +50,10 @@ class FormsController < ApplicationController
   end
   
   def destroy
-    @form = Form.find(params[:id])
-    @form.destroy
+    form = Form.find(params[:id])
+    @hospital = form.hospital
+    form.destroy
     flash[:notice] = "Successfully destroyed form."
-    redirect_to forms_url
+    redirect_to hospital_forms_url(@hospital)
   end
 end

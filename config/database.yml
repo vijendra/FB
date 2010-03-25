@@ -2,8 +2,8 @@ development:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: formbuilder
+  database: formbuilder_development
   pool: 5
   username: root
-  password: password
+  password: isiri
   host: localhost

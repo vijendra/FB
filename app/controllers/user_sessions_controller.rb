@@ -9,18 +9,18 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       flash[:notice] = "Successfully logged in."
-	  patient = Patient.find(current_user.id)
-	  hospital = patient.hospital
+      patient = Patient.find(current_user.id)
+      hospital = patient.hospital
       redirect_to edit_hospital_patient_url(hospital, patient)
     else
-     render :action => 'new'
+      render :action => 'new'
     end
   end
 
   def destroy
     current_user_session.destroy
     flash[:notice] = "Logout successful!"
-    redirect_to new_user_session_url
+    redirect_to hospitals_url
   end
 
 end

@@ -1,8 +1,8 @@
 class PatientsController < ApplicationController
-  # GET /patients
-  # GET /patients.xml
+ 
   def index
-    @patients = Patient.all
+    @hospital = Hospital.find(params[:hospital_id])
+    @patients = @hospital.patients
 
     respond_to do |format|
       format.html # index.html.erb
@@ -10,8 +10,7 @@ class PatientsController < ApplicationController
     end
   end
 
-  # GET /patients/1
-  # GET /patients/1.xml
+
   def show
     @patient = Patient.find(params[:id])
 
@@ -21,64 +20,55 @@ class PatientsController < ApplicationController
     end
   end
 
-  # GET /patients/new
-  # GET /patients/new.xml
+
   def new
     @hospital = Hospital.find(params[:hospital_id])
-    @user = @hospital.patients.new
-	@user_session = UserSession.new
+    @patient = @hospital.patients.new
+    @user_session = UserSession.new
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @patient }
     end
   end
 
-  # GET /patients/1/edit
+
   def edit
-    @patient = Patient.find(params[:id])
-	@hospital = @patient.hospital
-	@hospital.forms.first.form_fields.each do |field|
-	  fvalue = @patient.field_values.build
-	  fvalue.form_field = field
-	end
-  end
-
-  # POST /patients
-  # POST /patients.xml
-  def create
-    @patient = Patient.new(params[:patient])
-
-    respond_to do |format|
-      if @patient.save
-        flash[:notice] = 'Patient was successfully created.'
-        format.html { redirect_to(@patient) }
-        format.xml  { render :xml => @patient, :status => :created, :location => @patient }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @patient.errors, :status => :unprocessable_entity }
+    @patient = Patient.find(current_user.id)
+    @hospital = @patient.hospital
+    unless @hospital.forms.blank?
+      @hospital.forms.first.form_fields.each do |field|
+        fvalue = @patient.field_values.build
+        fvalue.form_field = field
       end
     end
   end
 
-  # PUT /patients/1
-  # PUT /patients/1.xml
+
+  def create
+    @hospital = Hospital.find(params[:hospital_id])
+    @patient = @hospital.patients.new(params[:patient])
+    
+    if @patient.save
+      flash[:notice] = 'You have successfully completed first step of your registration.'
+      redirect_to(edit_hospital_patient_path(@hospital, @patient))
+    else
+      @user_session = UserSession.new #to avoid error
+      render :action => "new"  
+    end
+  end
+
+
   def update
     @patient = Patient.find(params[:id])
-
-    respond_to do |format|
-      if @patient.update_attributes(params[:patient])
-        flash[:notice] = 'Patient was successfully updated.'
-        format.html { redirect_to(@patient) }
-        format.xml  { head :ok }
+    if @patient.update_attributes(params[:patient])
+       flash[:notice] = 'Patient was successfully updated.'
+        redirect_to(@patient)
       else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @patient.errors, :status => :unprocessable_entity }
+        render :action => "edit"
       end
-    end
   end
 
-  # DELETE /patients/1
-  # DELETE /patients/1.xml
+
   def destroy
     @patient = Patient.find(params[:id])
     @patient.destroy

@@ -3,7 +3,7 @@ class CreateFieldValues < ActiveRecord::Migration
     create_table :field_values do |t|
       t.integer :form_field_id
       t.string  :field_value
-	  t.integer :patient_id
+      t.integer :patient_id
       t.timestamps
     end
   end

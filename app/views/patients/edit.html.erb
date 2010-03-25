@@ -1,10 +1,11 @@
 <div class='sample_form'>
+  <h2> Complete registration </h2>
   <% form_for [@hospital, @patient] do |f| -%>
-      <% f.fields_for :field_values do |ff| %>
+    <% f.fields_for :field_values do |ff| %>
         <%= generate_label_and_form_tag(ff) %>
-      <% end %>
-	<br /><hr />
-	<%= submit_tag "Submit"  %>
+   <% end %>
+      <br /><hr />
+    <%= submit_tag "Submit"  %>
   <% end %>
 
 </div>

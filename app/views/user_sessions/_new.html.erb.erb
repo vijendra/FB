@@ -4,7 +4,7 @@
 <div class = 'left part1'>
 <h1>First step of registration</h1>
 <hr />
-<% form_for(@user) do |f| %>
+<% form_for([@hospital, @patient]) do |f| %>
   <%= f.error_messages %>
 
   <p>
